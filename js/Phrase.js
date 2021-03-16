@@ -42,12 +42,13 @@ class Phrase {
      * @param (string) letter - letter to display
      */
     showMatchedLetter(letter) {
-        const hiddenLetter = document.querySelectorAll('#phrase li')
-        
+        const hiddenLetter = this.phrase.split('')
+        const phraseList = document.querySelector('#phrase li')
+        const checkedLetter = letter
         hiddenLetter.forEach(letter => {
-            if(this.checkLetter()){
-            letter.className =`show letter ${letter}`
-                
+            if(phraseList.textContent === checkedLetter){
+            phraseList.classList.add('show')
+            phraseList.classList.remove('hide')
             }
 
         })

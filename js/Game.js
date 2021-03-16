@@ -44,9 +44,33 @@
         this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay()
     }
+    /**
+     * Checks for winning move
+     * @return {boolean} true if game has been won, false if game wasnt
+     */
+    checkForWin(){
+
+    }
+    /**
+     * Increase the value of the missed property
+     * removes a life from the scoreboard
+     * checks if player has remaining lives and ends game if player is out
+     */
+    remove(){
+
+    
+    }
+    /**
+     * displays game over message
+     * @param {boolean} gameWon - whether or not the user won the game
+     */
+    gameOver(gameWon){
+        
+    }
     handleInteraction(){
         
     }
+
  }
 
 
