@@ -13,14 +13,15 @@ class Phrase {
         const divItems = document.querySelector('#phrase ul');
         let phrase = this.phrase.split('');
         phrase.forEach(char => {
-            let listItems = document.createElement('li');
+            let listItems;
             if (char === ' ') {
-                listItems.innerHTML = `<li class="space"> </li>`
+                listItems = `<li class="space"></li>`
+                //.classList.add("space") 
             } else {
-                listItems.innerHTML = `<li class="hide letter ${char}">${char}</li>`
-                 
+                listItems = `<li class="hide letter ${char}" >${char}</li>`
             }
-            divItems.appendChild(listItems)
+            
+            divItems.innerHTML += listItems
         })
 
     }
@@ -42,13 +43,11 @@ class Phrase {
      * @param (string) letter - letter to display
      */
     showMatchedLetter(letter) {
-        const hiddenLetter = this.phrase.split('')
-        const phraseList = document.querySelector('#phrase li')
-        const checkedLetter = letter
-        hiddenLetter.forEach(letter => {
-            if(phraseList.textContent === checkedLetter){
-            phraseList.classList.add('show')
-            phraseList.classList.remove('hide')
+        const phraseList = document.querySelectorAll('#phrase li')
+        phraseList.forEach(listItem => {
+            if(listItem.textContent === letter){
+            listItem.classList.add('show')
+            listItem.classList.remove('hide')
             }
 
         })
