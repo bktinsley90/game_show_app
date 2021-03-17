@@ -20,23 +20,23 @@ class Phrase {
             } else {
                 listItems = `<li class="hide letter ${char}" >${char}</li>`
             }
-            
+
             divItems.innerHTML += listItems
         })
 
     }
-    
+
     /**
      * checks if passed letter is in phrase
      * @paran(string letter - letter to check 
      */
     checkLetter(letter) {
-            if(this.phrase.includes(letter)){
-                return true 
-            } else{
-                return false
-            }
-        
+        if (this.phrase.includes(letter)) {
+            return true
+        } else {
+            return false
+        }
+
     }
     /**
      * Displays passed letter on screen after a match is found 
@@ -45,12 +45,12 @@ class Phrase {
     showMatchedLetter(letter) {
         const phraseList = document.querySelectorAll('#phrase li')
         phraseList.forEach(listItem => {
-            if(listItem.textContent === letter){
-            listItem.classList.add('show')
-            listItem.classList.remove('hide')
+            if (listItem.textContent === letter) {
+                listItem.classList.add('show')
+                listItem.classList.remove('hide')
             }
 
         })
     }
-    
+
 }
